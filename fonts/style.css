@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Aretha';
+    src: local('Aretha Bold'), local('Aretha-Bold'),
+        url('Aretha-Bold.woff2') format('woff2'),
+        url('Aretha-Bold.woff') format('woff'),
+        url('Aretha-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }

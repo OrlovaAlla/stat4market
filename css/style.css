@@ -26,6 +26,13 @@ ul li {
           box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Aretha';
+  src: local("Aretha Bold"), local("Aretha-Bold"), url("../fonts/Aretha-Bold.woff2") format("woff2"), url("../fonts/Aretha-Bold.woff") format("woff"), url("../fonts/Aretha-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 html,
 body {
   width: 100%;
@@ -165,18 +172,43 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .menu__logo {
-  width: auto;
+  width: 260px;
   height: 80px;
   padding: 10px 19px 12px 0;
   border-right: 1px solid rgba(51, 26, 47, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .menu__logo-img {
   height: 58px;
   width: auto;
+}
+
+.menu__logo-text {
+  font-family: 'Aretha';
+  font-weight: 700;
+  font-size: 31.8678px;
+  line-height: 39px;
+  letter-spacing: -0.01em;
+  color: #54618E;
+}
+
+.menu__logo-text span {
+  color: #D653D2;
 }
 
 .menu__logo-p {
@@ -685,6 +717,10 @@ a:hover {
     height: 44px;
     width: auto;
   }
+  .menu__logo-text {
+    font-size: 25px;
+    line-height: 30px;
+  }
   .menu__logo-p {
     width: 178px;
     font-size: 10px;
@@ -905,18 +941,25 @@ a:hover {
     padding: 0 0 0 0;
     z-index: -1;
   }
+  .menu {
+    position: relative;
+  }
   .menu__block-logo {
     width: 372px;
   }
   .menu__logo {
-    width: auto;
+    width: 194.05px;
     height: 62px;
-    padding: 0 15px 0 0;
+    padding: 0 14px 0 0;
     border-right: 1px solid rgba(51, 26, 47, 0.5);
   }
   .menu__logo-img {
     height: 40px;
-    width: auto;
+    width: 47px;
+  }
+  .menu__logo-text {
+    font-size: 25px;
+    line-height: 30px;
   }
   .menu__logo-p {
     width: 178px;
@@ -953,6 +996,70 @@ a:hover {
   }
   .mobile-menu__line:last-child {
     width: 32px;
+  }
+  .open {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 10px;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 97px;
+    width: 250px;
+    height: 250px;
+    background-color: #ffffff;
+    border: 5px solid #7C4EAB;
+    border-radius: 20px;
+  }
+  .nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .nav__item {
+    height: 40px;
+  }
+  .nav__item:not(:last-child) {
+    padding-right: 0;
+  }
+  .nav__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100%;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .nav__phone {
+    height: 36px;
+  }
+  .nav__phone-a {
+    font-size: 20px;
+    line-height: 35px;
   }
   .content__h1 {
     font-size: 46px;
@@ -1071,14 +1178,18 @@ a:hover {
     width: auto;
   }
   .menu__logo {
-    width: auto;
+    width: 140.32px;
     height: 32px;
     padding: 0;
     border-right: none;
   }
   .menu__logo-img {
     height: 32px;
-    width: auto;
+    width: 32px;
+  }
+  .menu__logo-text {
+    font-size: 19px;
+    line-height: 22px;
   }
   .menu__logo-p {
     display: none;

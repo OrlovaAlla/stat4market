@@ -13,9 +13,17 @@ ul li {list-style: none;}
 *:after {box-sizing: border-box;}
 //-------------------------------//
 
-//$fonright: 1530px + 94px + (0.5 * (100vw - 1530px));
-//@function wcontainer($wcont) {    @return $wcont;}
-//@function calcpadding($paddcircle) {     $result: calc(1570px+$paddcircle+(0.5 * (100vw - (1570px - 40px)))); @return $result; }
+// ========== fonts ========
+@font-face {
+    font-family: 'Aretha';
+    src: local('Aretha Bold'), local('Aretha-Bold'),
+        url('../fonts/Aretha-Bold.woff2') format('woff2'),
+        url('../fonts/Aretha-Bold.woff') format('woff'),
+        url('../fonts/Aretha-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+//--------------------------
 
 
 html,
@@ -136,19 +144,34 @@ a:hover {
         width: 489px;
         display: flex;
         align-items: center;
-        //justify-content: space-between;
+        justify-content: space-between;
     }
 
     &__logo {
-        width: auto;
+        width: 260px;
         height: 80px;
         padding: 10px 19px 12px 0;
         border-right: 1px solid rgba(51, 26, 47, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     &__logo-img {
         height: 58px;
         width: auto;
+    }
+
+    &__logo-text {
+        font-family: 'Aretha';
+        font-weight: 700;
+        font-size: 31.8678px;
+        line-height: 39px;        
+        letter-spacing: -0.01em;
+        color: #54618E;
+        & span {
+            color: #D653D2;
+        }
     }
 
     &__logo-p {
@@ -635,6 +658,11 @@ a:hover {
             width: auto;
         }
 
+        &__logo-text {
+            font-size: 25px;
+            line-height: 30px;
+        }
+
         &__logo-p {
             width: 178px;
             font-size: 10px;
@@ -816,10 +844,10 @@ a:hover {
         &__h2-span {
 
             &::after {
-                content: "";           
+                content: "";
                 height: 7px;
-                bottom: -3px;                
-                border-radius: 5px;                
+                bottom: -3px;
+                border-radius: 5px;
             }
         }
 
@@ -845,8 +873,8 @@ a:hover {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-                
-            }
+
+        }
 
         &__image {
             width: 60px;
@@ -873,6 +901,7 @@ a:hover {
 
 
 }
+
 //============ @media max-width: 1150px ============//
 @media (max-width: 1150px) {
 
@@ -969,21 +998,29 @@ a:hover {
 
     .menu {
 
+        position: relative;
+
         &__block-logo {
             width: 372px;
         }
 
         &__logo {
-            width: auto;
+            width: 194.05px;
             height: 62px;
-            padding: 0 15px 0 0;
+            padding: 0 14px 0 0;
             border-right: 1px solid rgba(51, 26, 47, 0.5);
         }
 
         &__logo-img {
             height: 40px;
-            width: auto;
+            width: 47px;
         }
+
+        &__logo-text {
+            font-size: 25px;
+            line-height: 30px;
+        }
+
 
         &__logo-p {
             width: 178px;
@@ -1023,7 +1060,61 @@ a:hover {
 
 
     }
-
+    
+    // Открытое меню
+    .open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        top: 97px;
+        width: 250px;
+        height: 250px;
+        background-color: #ffffff;
+        border: 5px solid #7C4EAB;
+        border-radius: 20px;
+    }
+    .nav {
+        &__list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+                
+        
+                &__item {
+                          
+                    height: 40px;
+                    &:not(:last-child) {
+                        padding-right: 0;
+                    }
+                }
+        
+                &__link {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    font-size: 20px;
+                    line-height: 30px;
+        
+                }
+        
+                &__phone {
+                    height: 36px;
+                }
+        
+                &__phone-a {
+                    font-size: 20px;
+                    line-height: 35px;
+                }
+        
+               
+    }
 
     .content {
 
@@ -1146,7 +1237,7 @@ a:hover {
 
 }
 
-//============ @media max-width: 620px-360px ============// !!!!!ДОПИСАТЬ МИНИМУМ
+//============ @media max-width: 620px-360px ============// 
 @media (max-width: 620px) {
     .container {
         max-width: 360px;
@@ -1186,7 +1277,7 @@ a:hover {
         }
 
         &__logo {
-            width: auto;
+            width: 140.32px;
             height: 32px;
             padding: 0;
             border-right: none;
@@ -1194,7 +1285,12 @@ a:hover {
 
         &__logo-img {
             height: 32px;
-            width: auto;
+            width: 32px;
+        }
+
+        &__logo-text {
+            font-size: 19px;
+            line-height: 22px;
         }
 
         &__logo-p {
@@ -1263,7 +1359,7 @@ a:hover {
 
     .about {
 
-        
+
 
         &__h2 {
             font-size: 24px;
@@ -1277,9 +1373,10 @@ a:hover {
             flex-direction: column;
             align-items: center;
         }
-                &__sections:not(:last-child) {
-                    margin-bottom: 40px;
-                }
+
+        &__sections:not(:last-child) {
+            margin-bottom: 40px;
+        }
     }
 
 
@@ -1310,6 +1407,7 @@ a:hover {
                 height: auto;
             }
         }
+
         &__block-text {
             order: 0;
         }
@@ -1339,7 +1437,7 @@ a:hover {
             padding: 0;
             margin-bottom: 21px;
             font-size: 24px;
-                line-height: 36px;
+            line-height: 36px;
         }
 
 
@@ -1356,13 +1454,14 @@ a:hover {
             display: grid;
             grid-template-columns: 1fr;
             gap: 40px;
-            
+
         }
     }
+
     .cards {
         &__item {
-        align-items: center;
-        text-align: center;
+            align-items: center;
+            text-align: center;
         }
     }
 
