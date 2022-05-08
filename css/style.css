@@ -75,8 +75,8 @@ a:hover {
 
 .buttonm__out:hover {
   background-color: #7c4eab;
-  -webkit-transition-property: all;
-  transition-property: all;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
   -webkit-transition-timing-function: linear;
