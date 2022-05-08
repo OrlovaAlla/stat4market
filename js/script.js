@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if(this.window.matchMedia("(max-width: 1020px)").matches) {
             console.log("меньше 1020");
             abouth2.innerHTML="Как работает модуль Аналитика по API для Wildberries?";
-        } else {
+        } if else (this.window.matchMedia("(min-width: 1021px)").matches) {
             abouth2.innerHTML= title_def;
         }
         
